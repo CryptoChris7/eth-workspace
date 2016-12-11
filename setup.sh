@@ -17,7 +17,7 @@ case $OSTYPE in
 	echo "export GOPATH=$GOPATH" >> $HOME/.bashrc
 	echo "export PATH=\$PATH:$GOPATH/bin:/usr/local/go-1.7/bin" >> $HOME/.bashrc
 	sudo apt update
-	sudo apt install build-essential git emacs-nox python3-pip
+	sudo apt -y install build-essential git emacs-nox python3-pip
 	;;
     darwin*)
 	xcode-select --install
@@ -30,8 +30,8 @@ case $OSTYPE in
 	;;
 esac
 
-pip3 install --upgrade pip
-pip3 install virtualenv
+sudo pip3 install --upgrade pip
+sudo pip3 install virtualenv
 virtualenv $WORKSPACE
 cd $WORKSPACE && . bin/activate
 
